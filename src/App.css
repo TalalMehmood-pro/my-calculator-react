@@ -1,0 +1,103 @@
+/* style for the whole page */
+body {
+  display: flex;                 /* put things in a column/row easily */
+  flex-direction: column;        /* stack items on top of each other */
+  justify-content: center;       /* center items vertically */
+  align-items: center;           /* center items horizontally */
+  background-color: cadetblue;   /* nice blue background */
+  margin: 0;                     /* remove default page margin */
+  height: 100%;                  /* take full height */
+}
+
+/* heading at the top */
+h1 {
+  color: aliceblue;                     /* text color */
+  background-color: rgb(0, 109, 73);    /* green background */
+  padding: 5px;                         /* space around text */
+  margin-bottom: 15px;   /* add some space under heading */
+  text-align: center;    /* make sure it's centered */
+  width: 100%;           /* make background stretch across */
+}
+
+/* calculator main box */
+.calculator-body {
+  background: linear-gradient(to bottom, #CBFFCE, #004A21); /* gradient effect */
+  padding: 10px;            /* space inside box */
+  border-radius: 20px;      /* rounded corners */
+
+  /* shadow effects to look 3D */
+  box-shadow: 
+    0 50px 15px rgba(0,0,0,0.3),         /* outer shadow */
+    inset -50px -50px 100px rgba(0, 0, 0, 0.3), /* inner shadow bottom-left */
+    inset 30px 30px 100px rgba(0, 255, 4, 0.1); /* inner glow top-right */
+}
+
+/* all buttons */
+button {
+  width: 55px;              /* button width */
+  height: 55px;             /* button height */
+  margin: 5px;              /* space between buttons */
+
+  color: aquamarine;        /* text color */
+  background: #333;         /* dark background */
+  text-align: center;       /* center text */
+  font-size: 15px;          /* text size */
+  font-family: sans-serif;  /* font type */
+  cursor: pointer;          /* cursor changes to hand */
+  border-radius: 10px;      /* rounded corners */
+  transition: 0.2s;         /* smooth hover effect */
+}
+
+/* when mouse goes over button */
+button:hover {
+  background: #555;
+}
+
+/* special button = (equal) */
+.button-equal {
+  width: 180px;          /* make it wider */
+  height: 55px;
+  background-color: #242424; /* slightly different color */
+}
+
+/* make last row button (=) centered */
+.row-last {
+  display: flex;
+  justify-content: center;
+}
+
+/* black display box where numbers show */
+.display-screen {
+  width: 100%;
+  max-width: 300px;         /* don’t let it grow too big */
+  background-color: #000;   /* black background */
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 5px 10px;        /* inner space */
+  box-sizing: border-box;   /* include padding in size */
+  overflow: hidden;         /* hide overflow */
+  white-space: nowrap;      /* keep text in one line */
+  display: flex;
+  flex-direction: column;   /* put expression and result on top of each other */
+  justify-content: center;
+}
+
+/* first row (expression typed by user) */
+.display-expression {
+  color: aquamarine;
+  font-size: 25px;          /* medium size */
+  text-align: right;        /* text goes to right side */
+  line-height: 1.2em;       /* spacing between lines */
+  min-height: 30px;         /* keep space even if empty */
+  overflow-x: auto;         /* scroll if text too long */
+}
+
+/* second row (final answer) */
+.display-result {
+  color: aquamarine;
+  font-size: 30px;          /* bigger than expression */
+  text-align: right;
+  line-height: 1.2em;
+  min-height: 35px;
+  overflow-x: auto;
+}
